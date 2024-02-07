@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer
 {
@@ -13,11 +14,11 @@ namespace DataAccessLayer
         {
             connect=dbset;
         }
-       /* public void Insert(Doctor details)
+       public void Insert(Doctor details)
         {
             try
             {
-
+                connect.Database.ExecuteSqlRaw("");
             }
             catch(Exception)
             {
@@ -28,7 +29,7 @@ namespace DataAccessLayer
         {
             try
             {
-
+                connect.Database.ExecuteSqlRaw("");
             }
             catch (Exception)
             {
@@ -40,34 +41,36 @@ namespace DataAccessLayer
         {
             try
             {
-
+                connect.Database.ExecuteSqlRaw("");
             }
             catch (Exception)
             {
 
             }
         }
-        public List<Doctor> Getall()
+         public List<Doctor> Getall()
         {
             try
             {
-                
+                var GetDetails = connect.DoctorTableList.FromSqlRaw<Doctor>("Select * from DoctorTableList").ToList();
+                return GetDetails;
             }
             catch (Exception)
             {
-
+                throw;
             }
         }
         public Doctor GetById(long id)
         {
             try
             {
-
+                var GetidDetails = connect.DoctorTableList.FromSqlRaw<Doctor>("Select * from DoctorTableList").FirstOrDefault();
+                return GetidDetails;
             }
             catch (Exception)
             {
-
+                throw;
             }
-        }*/
+        }
     }
 }

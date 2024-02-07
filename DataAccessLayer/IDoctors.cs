@@ -8,11 +8,11 @@ namespace DataAccessLayer
 {
    public interface  IDoctors
     {
-       /* public void Insert(Doctor details);
+        public void Insert(Doctor details);
         public void Update(Doctor replace, long id);
         public void Delete(long id);
-        public List<Doctor> Getall();
-        public Doctor GetById(long id);*/
+         public List<Doctor> Getall();
+         public Doctor GetById(long id);
 
     }
 }
